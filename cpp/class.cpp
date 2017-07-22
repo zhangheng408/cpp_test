@@ -6,14 +6,14 @@ using namespace std;
 class A{
     public:
         int a;   
-        virtual void fa(){}
-        //static virtual void f(){}
+        void fa(){cout<<"A:fa"<<endl;}
 };
 
 class B:public A{
     public:
         int b;
         virtual void fb(){}
+        virtual void fa(){cout<<"B:fa"<<endl;}
 };
 class C:public A{
     public:
@@ -27,6 +27,9 @@ class D:public B, public C{
 };
 
 int main(){
+    A* a=new B();
+    a->fa();
+    B::fa();
     D* d=new D();
     cout<<"A size: "<<sizeof(A)<<endl;
     cout<<"B size: "<<sizeof(B)<<endl;
