@@ -3,6 +3,12 @@
  * pstack <pid>
  * all thread is in S(sleep) status when deadlock
  */
+/*
+ * to avoid dead lock
+ * 1.good coding style, in order lock, reverse order unlock
+ * 2.mutex with time out
+ * 3.recursive mutex and with timeout
+ */
 #include<iostream>
 #include<thread>
 #include<chrono>
